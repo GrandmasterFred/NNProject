@@ -1,0 +1,22 @@
+2023-08-24 22:04:18,319 - root - INFO - currently at epoch 0 train accuracy: tensor(0.0243, device='cuda:0') loss of: 4.552095671844483 eval accuracy: None
+2023-08-24 22:04:18,319 - root - INFO - currently at epoch 0 train accuracy: tensor(0.0243, device='cuda:0') loss of: 4.552095671844483 eval accuracy: None
+2023-08-24 22:04:18,319 - root - INFO - currently at epoch 0 train accuracy: tensor(0.0243, device='cuda:0') loss of: 4.552095671844483 eval accuracy: None
+2023-08-24 22:04:18,319 - root - INFO - currently at epoch 0 train accuracy: tensor(0.0243, device='cuda:0') loss of: 4.552095671844483 eval accuracy: None
+2023-08-24 22:09:15,493 - root - INFO - currently at epoch 0 train accuracy: tensor(0.0267, device='cuda:0') loss of: 4.535279730987549 eval accuracy: tensor(0.0398, device='cuda:0')
+2023-08-24 22:10:41,578 - root - INFO - currently at epoch 0 train accuracy: tensor(0.0271, device='cuda:0') loss of: 4.537923631286621 eval accuracy: tensor(0.0425, device='cuda:0')
+2023-08-24 22:10:41,578 - root - INFO - currently at epoch 0 train accuracy: tensor(0.0271, device='cuda:0') loss of: 4.537923631286621 eval accuracy: tensor(0.0425, device='cuda:0')
+2023-08-24 22:10:59,885 - root - INFO - currently at epoch 1 train accuracy: tensor(0.0583, device='cuda:0') loss of: 4.256656474685669 eval accuracy: tensor(0.0681, device='cuda:0')
+2023-08-24 22:10:59,885 - root - INFO - currently at epoch 1 train accuracy: tensor(0.0583, device='cuda:0') loss of: 4.256656474685669 eval accuracy: tensor(0.0681, device='cuda:0')
+2023-08-24 22:11:17,826 - root - INFO - currently at epoch 2 train accuracy: tensor(0.0824, device='cuda:0') loss of: 4.052900477600097 eval accuracy: tensor(0.0912, device='cuda:0')
+2023-08-24 22:11:17,826 - root - INFO - currently at epoch 2 train accuracy: tensor(0.0824, device='cuda:0') loss of: 4.052900477600097 eval accuracy: tensor(0.0912, device='cuda:0')
+2023-08-24 22:14:16,499 - root - INFO - currently at epoch 0 train accuracy: tensor(0.0253, device='cuda:0') loss of: 4.553142375946045 eval accuracy: tensor(0.0375, device='cuda:0')
+2023-08-24 22:14:35,000 - root - INFO - currently at epoch 1 train accuracy: tensor(0.0515, device='cuda:0') loss of: 4.296969683837891 eval accuracy: tensor(0.0617, device='cuda:0')
+2023-08-24 22:14:53,333 - root - INFO - currently at epoch 2 train accuracy: tensor(0.0758, device='cuda:0') loss of: 4.087499937438965 eval accuracy: tensor(0.0844, device='cuda:0')
+2023-08-24 22:15:11,740 - root - INFO - currently at epoch 3 train accuracy: tensor(0.0981, device='cuda:0') loss of: 3.9222949230194093 eval accuracy: tensor(0.1048, device='cuda:0')
+2023-08-24 22:15:30,989 - root - INFO - currently at epoch 4 train accuracy: tensor(0.1180, device='cuda:0') loss of: 3.7862459957122803 eval accuracy: tensor(0.1206, device='cuda:0')
+2023-08-24 22:15:49,121 - root - INFO - currently at epoch 5 train accuracy: tensor(0.1358, device='cuda:0') loss of: 3.669298194503784 eval accuracy: tensor(0.1334, device='cuda:0')
+2023-08-24 22:16:07,932 - root - INFO - currently at epoch 6 train accuracy: tensor(0.1515, device='cuda:0') loss of: 3.57353306388855 eval accuracy: tensor(0.1455, device='cuda:0')
+2023-08-24 22:16:27,200 - root - INFO - currently at epoch 7 train accuracy: tensor(0.1691, device='cuda:0') loss of: 3.476167450714111 eval accuracy: tensor(0.1675, device='cuda:0')
+2023-08-24 22:16:45,170 - root - INFO - currently at epoch 8 train accuracy: tensor(0.1823, device='cuda:0') loss of: 3.3962753044128418 eval accuracy: tensor(0.1729, device='cuda:0')
+2023-08-24 22:25:33,107 - root - INFO - testing accuracy of FirstModelTest is: tensor(0.1747, device='cuda:0')
+2023-08-24 22:25:33,107 - root - INFO - testing accuracy of FirstModelTest is: tensor(0.1747, device='cuda:0')

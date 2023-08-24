@@ -1,0 +1,94 @@
+2023-08-24 16:44:25,534 - INFO - This is an info message.
+2023-08-24 16:44:25,535 - WARNING - This is a warning message.
+2023-08-24 16:44:25,535 - ERROR - This is an error message.
+2023-08-24 16:51:35,898 - INFO - ('currently at epoch ', '0')
+2023-08-24 16:51:39,628 - INFO - ('currently at epoch ', '1')
+2023-08-24 16:51:43,325 - INFO - ('currently at epoch ', '2')
+2023-08-24 16:51:46,986 - INFO - ('currently at epoch ', '3')
+2023-08-24 16:51:54,362 - INFO - currently at epoch 0
+2023-08-24 16:51:58,299 - INFO - currently at epoch 1
+2023-08-24 16:52:01,888 - INFO - currently at epoch 2
+2023-08-24 16:52:05,536 - INFO - currently at epoch 3
+2023-08-24 16:53:05,415 - INFO - currently at epoch 0 accuracy: tensor(0.0104, device='cuda:0') loss of: 4.604697506898527
+2023-08-24 16:53:09,015 - INFO - currently at epoch 1 accuracy: tensor(0.0109, device='cuda:0') loss of: 4.604459780796319
+2023-08-24 16:53:12,588 - INFO - currently at epoch 2 accuracy: tensor(0.0115, device='cuda:0') loss of: 4.604599992181085
+2023-08-24 16:53:16,173 - INFO - currently at epoch 3 accuracy: tensor(0.0116, device='cuda:0') loss of: 4.604433490971851
+2023-08-24 16:53:19,788 - INFO - currently at epoch 4 accuracy: tensor(0.0109, device='cuda:0') loss of: 4.604535998812147
+2023-08-24 16:53:23,387 - INFO - currently at epoch 5 accuracy: tensor(0.0109, device='cuda:0') loss of: 4.604449041330131
+2023-08-24 16:54:31,061 - INFO - currently at epoch 0 accuracy: tensor(0.0109, device='cuda:0') loss of: 4.604251135253906
+2023-08-24 16:54:45,430 - INFO - currently at epoch 1 accuracy: tensor(0.0117, device='cuda:0') loss of: 4.603978703308106
+2023-08-24 16:54:59,805 - INFO - currently at epoch 2 accuracy: tensor(0.0119, device='cuda:0') loss of: 4.6036179153442385
+2023-08-24 16:55:14,263 - INFO - currently at epoch 3 accuracy: tensor(0.0127, device='cuda:0') loss of: 4.6033496658325195
+2023-08-24 16:55:28,864 - INFO - currently at epoch 4 accuracy: tensor(0.0135, device='cuda:0') loss of: 4.603000957489014
+2023-08-24 16:55:43,399 - INFO - currently at epoch 5 accuracy: tensor(0.0141, device='cuda:0') loss of: 4.602730070495605
+2023-08-24 16:55:58,001 - INFO - currently at epoch 6 accuracy: tensor(0.0140, device='cuda:0') loss of: 4.602243093872071
+2023-08-24 16:56:13,378 - INFO - currently at epoch 7 accuracy: tensor(0.0148, device='cuda:0') loss of: 4.601910809326172
+2023-08-24 16:56:27,747 - INFO - currently at epoch 8 accuracy: tensor(0.0151, device='cuda:0') loss of: 4.601297261810303
+2023-08-24 16:56:43,086 - INFO - currently at epoch 9 accuracy: tensor(0.0156, device='cuda:0') loss of: 4.600841226959228
+2023-08-24 16:56:58,149 - INFO - currently at epoch 10 accuracy: tensor(0.0158, device='cuda:0') loss of: 4.600094844818115
+2023-08-24 16:57:12,582 - INFO - currently at epoch 11 accuracy: tensor(0.0144, device='cuda:0') loss of: 4.5995423774719235
+2023-08-24 16:57:27,077 - INFO - currently at epoch 12 accuracy: tensor(0.0157, device='cuda:0') loss of: 4.598656656646728
+2023-08-24 16:57:41,803 - INFO - currently at epoch 13 accuracy: tensor(0.0152, device='cuda:0') loss of: 4.597627070617675
+2023-08-24 16:57:56,602 - INFO - currently at epoch 14 accuracy: tensor(0.0148, device='cuda:0') loss of: 4.596833254241943
+2023-08-24 16:58:11,422 - INFO - currently at epoch 15 accuracy: tensor(0.0137, device='cuda:0') loss of: 4.5954626876831055
+2023-08-24 16:58:26,567 - INFO - currently at epoch 16 accuracy: tensor(0.0129, device='cuda:0') loss of: 4.593948268127441
+2023-08-24 16:58:41,475 - INFO - currently at epoch 17 accuracy: tensor(0.0134, device='cuda:0') loss of: 4.59225421218872
+2023-08-24 16:58:56,039 - INFO - currently at epoch 18 accuracy: tensor(0.0121, device='cuda:0') loss of: 4.590273105621338
+2023-08-24 16:59:11,309 - INFO - currently at epoch 19 accuracy: tensor(0.0121, device='cuda:0') loss of: 4.587610954284668
+2023-08-24 16:59:25,981 - INFO - currently at epoch 20 accuracy: tensor(0.0117, device='cuda:0') loss of: 4.584751993560791
+2023-08-24 16:59:41,256 - INFO - currently at epoch 21 accuracy: tensor(0.0121, device='cuda:0') loss of: 4.580845507049561
+2023-08-24 16:59:56,353 - INFO - currently at epoch 22 accuracy: tensor(0.0125, device='cuda:0') loss of: 4.575727790832519
+2023-08-24 17:00:11,121 - INFO - currently at epoch 23 accuracy: tensor(0.0135, device='cuda:0') loss of: 4.569618177795411
+2023-08-24 17:00:26,044 - INFO - currently at epoch 24 accuracy: tensor(0.0143, device='cuda:0') loss of: 4.561400880432129
+2023-08-24 17:00:41,296 - INFO - currently at epoch 25 accuracy: tensor(0.0144, device='cuda:0') loss of: 4.549856163787842
+2023-08-24 17:01:42,798 - INFO - This is an info message.
+2023-08-24 17:01:42,798 - WARNING - This is a warning message.
+2023-08-24 17:01:42,799 - ERROR - This is an error message.
+2023-08-24 17:01:59,151 - INFO - currently at epoch 0 accuracy: tensor(0.0252, device='cuda:0') loss of: 4.5393750251770015
+2023-08-24 17:02:13,763 - INFO - currently at epoch 1 accuracy: tensor(0.0510, device='cuda:0') loss of: 4.26488517074585
+2023-08-24 17:02:28,386 - INFO - currently at epoch 2 accuracy: tensor(0.0783, device='cuda:0') loss of: 4.0570606586456295
+2023-08-24 17:02:43,535 - INFO - currently at epoch 3 accuracy: tensor(0.1011, device='cuda:0') loss of: 3.886252586364746
+2023-08-24 17:10:45,950 - INFO - This is an info message.
+2023-08-24 17:10:45,950 - WARNING - This is a warning message.
+2023-08-24 17:10:45,950 - ERROR - This is an error message.
+2023-08-24 17:11:18,539 - INFO - currently at epoch 0 accuracy: tensor(0.0254, device='cuda:0') loss of: 4.530574586486816
+2023-08-24 17:11:34,791 - INFO - currently at epoch 1 accuracy: tensor(0.0546, device='cuda:0') loss of: 4.253593740081787
+2023-08-24 17:11:50,994 - INFO - currently at epoch 2 accuracy: tensor(0.0811, device='cuda:0') loss of: 4.061206823348999
+2023-08-24 17:12:06,947 - INFO - currently at epoch 3 accuracy: tensor(0.1014, device='cuda:0') loss of: 3.900673265838623
+2023-08-24 17:12:23,394 - INFO - currently at epoch 4 accuracy: tensor(0.1213, device='cuda:0') loss of: 3.765455725860596
+2023-08-24 17:12:39,457 - INFO - currently at epoch 5 accuracy: tensor(0.1402, device='cuda:0') loss of: 3.654823439788818
+2023-08-24 17:12:56,260 - INFO - currently at epoch 6 accuracy: tensor(0.1544, device='cuda:0') loss of: 3.5533440673828127
+2023-08-24 17:13:13,108 - INFO - currently at epoch 7 accuracy: tensor(0.1710, device='cuda:0') loss of: 3.464891162490845
+2023-08-24 17:13:29,741 - INFO - currently at epoch 8 accuracy: tensor(0.1836, device='cuda:0') loss of: 3.380004871749878
+2023-08-24 17:13:45,905 - INFO - currently at epoch 9 accuracy: tensor(0.2006, device='cuda:0') loss of: 3.2977186016082762
+2023-08-24 17:14:01,883 - INFO - currently at epoch 10 accuracy: tensor(0.2112, device='cuda:0') loss of: 3.2327966472625733
+2023-08-24 17:14:18,164 - INFO - currently at epoch 11 accuracy: tensor(0.2225, device='cuda:0') loss of: 3.1635425975799563
+2023-08-24 17:14:34,824 - INFO - currently at epoch 12 accuracy: tensor(0.2364, device='cuda:0') loss of: 3.104547842025757
+2023-08-24 17:14:51,114 - INFO - currently at epoch 13 accuracy: tensor(0.2452, device='cuda:0') loss of: 3.0411864555358887
+2023-08-24 17:15:07,840 - INFO - currently at epoch 14 accuracy: tensor(0.2596, device='cuda:0') loss of: 2.98293957862854
+2023-08-24 17:15:24,160 - INFO - currently at epoch 15 accuracy: tensor(0.2689, device='cuda:0') loss of: 2.924830198287964
+2023-08-24 17:15:40,871 - INFO - currently at epoch 16 accuracy: tensor(0.2783, device='cuda:0') loss of: 2.866485701751709
+2023-08-24 17:15:57,739 - INFO - currently at epoch 17 accuracy: tensor(0.2878, device='cuda:0') loss of: 2.8156428344726563
+2023-08-24 17:16:14,563 - INFO - currently at epoch 18 accuracy: tensor(0.2986, device='cuda:0') loss of: 2.762302442932129
+2023-08-24 17:16:30,825 - INFO - currently at epoch 19 accuracy: tensor(0.3099, device='cuda:0') loss of: 2.704758491897583
+2023-08-24 17:16:46,746 - INFO - currently at epoch 20 accuracy: tensor(0.3176, device='cuda:0') loss of: 2.6562575103759767
+2023-08-24 17:17:03,111 - INFO - currently at epoch 21 accuracy: tensor(0.3303, device='cuda:0') loss of: 2.591524119567871
+2023-08-24 17:17:20,205 - INFO - currently at epoch 22 accuracy: tensor(0.3401, device='cuda:0') loss of: 2.5458912996292113
+2023-08-24 17:17:37,364 - INFO - currently at epoch 23 accuracy: tensor(0.3496, device='cuda:0') loss of: 2.4970140451431275
+2023-08-24 17:17:54,335 - INFO - currently at epoch 24 accuracy: tensor(0.3632, device='cuda:0') loss of: 2.4415153841018675
+2023-08-24 17:18:11,025 - INFO - currently at epoch 25 accuracy: tensor(0.3717, device='cuda:0') loss of: 2.3917534881591798
+2023-08-24 17:18:27,956 - INFO - currently at epoch 26 accuracy: tensor(0.3825, device='cuda:0') loss of: 2.332743692779541
+2023-08-24 17:18:45,237 - INFO - currently at epoch 27 accuracy: tensor(0.3952, device='cuda:0') loss of: 2.2781224168777467
+2023-08-24 17:19:01,675 - INFO - currently at epoch 28 accuracy: tensor(0.4092, device='cuda:0') loss of: 2.2160930192947386
+2023-08-24 17:19:18,719 - INFO - currently at epoch 29 accuracy: tensor(0.4170, device='cuda:0') loss of: 2.164669856452942
+2023-08-24 17:19:35,832 - INFO - currently at epoch 30 accuracy: tensor(0.4280, device='cuda:0') loss of: 2.1147302013397216
+2023-08-24 17:19:52,119 - INFO - currently at epoch 31 accuracy: tensor(0.4411, device='cuda:0') loss of: 2.049050602531433
+2023-08-24 17:20:08,273 - INFO - currently at epoch 32 accuracy: tensor(0.4558, device='cuda:0') loss of: 1.9968428356170653
+2023-08-24 17:20:24,446 - INFO - currently at epoch 33 accuracy: tensor(0.4665, device='cuda:0') loss of: 1.9362221141815186
+2023-08-24 17:20:40,700 - INFO - currently at epoch 34 accuracy: tensor(0.4784, device='cuda:0') loss of: 1.88321175365448
+2023-08-24 17:20:56,935 - INFO - currently at epoch 35 accuracy: tensor(0.4932, device='cuda:0') loss of: 1.8190174150466918
+2023-08-24 17:21:13,168 - INFO - currently at epoch 36 accuracy: tensor(0.5038, device='cuda:0') loss of: 1.7638589466094972
+2023-08-24 17:21:29,593 - INFO - currently at epoch 37 accuracy: tensor(0.5164, device='cuda:0') loss of: 1.7051085578918457
+2023-08-24 17:21:45,880 - INFO - currently at epoch 38 accuracy: tensor(0.5335, device='cuda:0') loss of: 1.6433991706848146
+2023-08-24 17:22:02,241 - INFO - currently at epoch 39 accuracy: tensor(0.5494, device='cuda:0') loss of: 1.5772817876815797
+2023-08-24 17:22:18,359 - INFO - currently at epoch 40 accuracy: tensor(0.5581, device='cuda:0') loss of: 1.5322750385284425

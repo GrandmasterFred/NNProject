@@ -74,6 +74,14 @@ import logging
 
 class MyLogger:
     def __init__(self, log_file, log_level=logging.DEBUG):
+        # setting up the logging location
+        import os
+        directory = os.path.dirname(log_file)
+
+        # Check if the directory exists, and create it if it doesn't
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
         # Configure logging settings
         self.log_file = log_file
         self.log_level = log_level
@@ -103,7 +111,8 @@ class MyLogger:
 
 
 # this is the evaluation fucntion, where it trains it for an epoch, and returns the validation accuracy
-def eval(model, givenDataloader):
+def eval(model, argDict, givenDataloader):
+    import numpy as np
     # setting the device
     if torch.cuda.is_available():
         device = torch.device('cuda')
@@ -113,10 +122,12 @@ def eval(model, givenDataloader):
     model.to(device)
 
     eval_accuracy = 0
+    eval_loss = 0
 
     # setting evaluation mode
     with torch.no_grad():
         accuracy_values = []
+        loss_values = []
         for idx, (data, label) in enumerate(givenDataloader):
             data = data.to(device)
             label = label.to(device)
@@ -124,15 +135,20 @@ def eval(model, givenDataloader):
             # getting the predictions
             outputs = model(data)
 
+            # getting the loss as well
+            loss = argDict['criterion'](outputs, label)
+            loss_values.append((loss.item()))
+
             # getting the accuracy
             _, predicted = torch.max(outputs, 1)
             accuracy = (predicted == label).float().mean()
             accuracy_values.append(accuracy)
 
         # calculating the accuracy
+        eval_loss = np.mean(loss_values)
         eval_accuracy = torch.mean(torch.stack(accuracy_values))
 
-    return eval_accuracy
+    return eval_accuracy, eval_loss
 
 def test(model, givenDataloader):
     # this is basically the same as the evaluation one, but it is just given a different name to make things easier i guess. There should be no reason that they are two separate functions
@@ -190,9 +206,11 @@ def train(model, argDict, givenDataloader, evalDataloader=None, testDataloader=N
     model.to(device)
 
     # training for multiple epochs
-    epoch_accuracy_values_test = []
+    epoch_accuracy_values_train = []
     epoch_accuracy_values_eval = []
-    epoch_loss_values = []
+    epoch_loss_values_train = []
+    epoch_loss_values_eval = []
+
 
     best_epoch_value = 0
     best_epoch_epoch = 0
@@ -225,15 +243,16 @@ def train(model, argDict, givenDataloader, evalDataloader=None, testDataloader=N
 
         # calculating epoch losses
         epoch_loss = np.mean(loss_values)
-        epoch_loss_values.append(epoch_loss)
+        epoch_loss_values_train.append(epoch_loss)
         epoch_accuracy = torch.mean(torch.stack(accuracy_values))   # due to it being tensor
-        epoch_accuracy_values_test.append(epoch_accuracy)
+        epoch_accuracy_values_train.append(epoch_accuracy.item())
 
         tempString = 'currently at epoch ' + str(currentEpoch) + ' train accuracy: ' + str(epoch_accuracy) + ' loss of: ' + str(epoch_loss)
 
         # this section is for evaluation of the model on the eval set
-        eval_accuracy = eval(model, evalDataloader)
-        epoch_accuracy_values_eval.append(eval_accuracy)
+        eval_accuracy, eval_loss = eval(model, argDict, evalDataloader)
+        epoch_accuracy_values_eval.append(eval_accuracy.item())
+        epoch_loss_values_eval.append(eval_loss)
 
         # log it as well
         tempString = tempString + ' eval accuracy: ' + str(eval_accuracy)
@@ -250,8 +269,10 @@ def train(model, argDict, givenDataloader, evalDataloader=None, testDataloader=N
                 # this means that this is the max trained  epoch
                 break
 
-    argDict['epoch_loss_values'] = epoch_loss_values
-    argDict['epoch_accuracy_values_test'] = epoch_accuracy_values_test
+    argDict['epoch_loss_values_train'] = epoch_loss_values_train
+    argDict['epoch_loss_values_eval'] = epoch_loss_values_eval
+    argDict['epoch_accuracy_values_train'] = epoch_accuracy_values_train
+    argDict['epoch_accuracy_values_eval'] = epoch_accuracy_values_eval
     argDict['trainingStopEpoch'] = currentEpoch
 
     # saves the dictionary as well

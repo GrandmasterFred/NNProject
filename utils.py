@@ -2,6 +2,7 @@
 # make a class that has the logger, as well as the method of printing i guess
 import torch
 import numpy as np
+import logging
 
 def load_model_from_file(model, folder_path, filename):
     import os
@@ -70,8 +71,6 @@ def save_dict_to_file(dict, folder_path, filename):
     with open(filename, "w") as json_file:
         json.dump(new_dict, json_file)
 
-import logging
-
 class MyLogger:
     def __init__(self, log_file, log_level=logging.DEBUG):
         # setting up the logging location
@@ -129,20 +128,26 @@ def eval(model, argDict, givenDataloader):
         accuracy_values = []
         loss_values = []
         for idx, (data, label) in enumerate(givenDataloader):
-            data = data.to(device)
-            label = label.to(device)
+            try:
+                data = data.to(device)
+                label = label.to(device)
 
-            # getting the predictions
-            outputs = model(data)
+                # getting the predictions
+                outputs = model(data)
 
-            # getting the loss as well
-            loss = argDict['criterion'](outputs, label)
-            loss_values.append((loss.item()))
+                # getting the loss as well
+                loss = argDict['criterion'](outputs, label)
+                loss_values.append((loss.item()))
 
-            # getting the accuracy
-            _, predicted = torch.max(outputs, 1)
-            accuracy = (predicted == label).float().mean()
-            accuracy_values.append(accuracy)
+                # getting the accuracy
+                _, predicted = torch.max(outputs, 1)
+                accuracy = (predicted == label).float().mean()
+                accuracy_values.append(accuracy)
+            except Exception as e:
+                # this section logs the whatever
+                errString = f'error located at index: {str(idx)} at epoch evalLoop'
+                argDict['logger'].log(str(errString))
+                argDict['logger'].log(str(e))
 
         # calculating the accuracy
         eval_loss = np.mean(loss_values)
@@ -150,7 +155,7 @@ def eval(model, argDict, givenDataloader):
 
     return eval_accuracy, eval_loss
 
-def test(model, givenDataloader):
+def test(model, argDict, givenDataloader):
     # this is basically the same as the evaluation one, but it is just given a different name to make things easier i guess. There should be no reason that they are two separate functions
     # setting the device
     if torch.cuda.is_available():
@@ -166,16 +171,23 @@ def test(model, givenDataloader):
     with torch.no_grad():
         accuracy_values = []
         for idx, (data, label) in enumerate(givenDataloader):
-            data = data.to(device)
-            label = label.to(device)
+            try:
+                data = data.to(device)
+                label = label.to(device)
 
-            # getting the predictions
-            outputs = model(data)
+                # getting the predictions
+                outputs = model(data)
 
-            # getting the accuracy
-            _, predicted = torch.max(outputs, 1)
-            accuracy = (predicted == label).float().mean()
-            accuracy_values.append(accuracy)
+                # getting the accuracy
+                _, predicted = torch.max(outputs, 1)
+                accuracy = (predicted == label).float().mean()
+                accuracy_values.append(accuracy)
+            except Exception as e:
+                # this section logs the whatever
+                errString = f'error located at index: {str(idx)} at testing section'
+                argDict['logger'].log(str(errString))
+                argDict['logger'].log(str(e))
+
 
         # calculating the accuracy
         test_accuracy = torch.mean(torch.stack(accuracy_values))
@@ -184,6 +196,9 @@ def test(model, givenDataloader):
 
 def train(model, argDict, givenDataloader, evalDataloader=None, testDataloader=None):
     # section to check for presence of all the needed loaders
+    import time
+    start_time = time.time()
+
     if evalDataloader is None:
         print('you forgot eval loader')
         return
@@ -220,26 +235,32 @@ def train(model, argDict, givenDataloader, evalDataloader=None, testDataloader=N
         loss_values = []
 
         for idx, (data, label) in enumerate(givenDataloader):
-            data = data.to(device)
-            label = label.to(device)
+            #  this is captured inside a try because of some weird thing breaking in the middle sometimes when there is only 1 label
+            try:
+                data, label = data.to(device), label.to(device)
 
-            # this will be the training loop
-            outputs = model(data)
+                # this will be the training loop
+                outputs = model(data)
 
-            loss = argDict['criterion'](outputs, label)
+                loss = argDict['criterion'](outputs, label)
 
-            # backward pass and optimization
-            argDict['optimizer'].zero_grad()
-            loss.backward()
-            argDict['optimizer'].step()
+                # backward pass and optimization
+                argDict['optimizer'].zero_grad()
+                loss.backward()
+                argDict['optimizer'].step()
 
-            # data logging phase, obtains loss and accuracy
-            loss_values.append((loss.item()))
+                # data logging phase, obtains loss and accuracy
+                loss_values.append((loss.item()))
 
-            # getting the accuracy
-            _, predicted = torch.max(outputs, 1)
-            accuracy = (predicted == label).float().mean()
-            accuracy_values.append(accuracy)
+                # getting the accuracy
+                _, predicted = torch.max(outputs, 1)
+                accuracy = (predicted == label).float().mean()
+                accuracy_values.append(accuracy)
+            except Exception as e:
+                # this section logs the whatever
+                errString = f'error located at index: {str(idx)} at epoch {str(currentEpoch)}'
+                argDict['logger'].log(str(errString))
+                argDict['logger'].log(str(e))
 
         # calculating epoch losses
         epoch_loss = np.mean(loss_values)
@@ -275,5 +296,19 @@ def train(model, argDict, givenDataloader, evalDataloader=None, testDataloader=N
     argDict['epoch_accuracy_values_eval'] = epoch_accuracy_values_eval
     argDict['trainingStopEpoch'] = currentEpoch
 
+    # records the time taken for all these
+    end_time = time.time()
+    elapsed_time = end_time - start_time
+    argDict['elapsed_time'] = elapsed_time
+
     # saves the dictionary as well
     return argDict
+
+def check_folder_exists(folder_name):
+    import os
+
+    if not os.path.exists(folder_name):
+        os.makedirs(folder_name)
+    else:
+        return
+    return

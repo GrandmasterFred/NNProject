@@ -118,6 +118,8 @@ def eval(model, argDict, givenDataloader):
     else:
         device = torch.device('cpu')
 
+    # forces it to train on cpu real quick
+    # device = torch.device('cpu')
     model.to(device)
 
     eval_accuracy = 0
